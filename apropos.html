@@ -6,13 +6,12 @@
     <title>À propos de moi</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Lexend:wght@100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <div class="particles" id="particles"></div>
+    
     <header>
         <nav>
             <ul>
@@ -23,19 +22,43 @@
             </ul>
         </nav>
     </header>
+    
     <main>
         <h1>À propos de moi</h1>
+        
         <section>
             <h2>Présentation</h2>
             <p>Je m'appelle Alexy Durand, je suis actuellement en deuxième année de BUT informatique. Je découvre des domaines passionnants comme la programmation, les bases de données et bien plus encore.
                 Pour me découvrir un peu plus, vous pouvez consulter mon CV ci-dessous.
             </p>
         </section>
+        
         <section>
             <a href="CV.pdf" download="Alexy_DURAND_CV.pdf" class="telecharger">
                 <h2>Cliquez ici pour télécharger mon CV</h2>
             </a>
         </section>
     </main>
+
+    <script>
+        // Création de particules flottantes
+        const particlesContainer = document.getElementById('particles');
+        const particleCount = 30;
+
+        for (let i = 0; i < particleCount; i++) {
+            const particle = document.createElement('div');
+            particle.className = 'particle';
+            particle.style.left = Math.random() * 100 + '%';
+            particle.style.animationDelay = Math.random() * 10 + 's';
+            particle.style.animationDuration = (Math.random() * 10 + 10) + 's';
+            
+            const colors = ['#00ffff', '#ff00ff', '#8a2be2'];
+            const color = colors[Math.floor(Math.random() * colors.length)];
+            particle.style.background = color;
+            particle.style.boxShadow = `0 0 10px ${color}`;
+            
+            particlesContainer.appendChild(particle);
+        }
+    </script>
 </body>
 </html>

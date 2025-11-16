@@ -69,5 +69,26 @@
         </section>
         
     </main>
+
+    <script>
+        // Création de particules flottantes
+        const particlesContainer = document.getElementById('particles');
+        const particleCount = 30;
+
+        for (let i = 0; i < particleCount; i++) {
+            const particle = document.createElement('div');
+            particle.className = 'particle';
+            particle.style.left = Math.random() * 100 + '%';
+            particle.style.animationDelay = Math.random() * 10 + 's';
+            particle.style.animationDuration = (Math.random() * 10 + 10) + 's';
+            
+            const colors = ['#00ffff', '#ff00ff', '#8a2be2'];
+            const color = colors[Math.floor(Math.random() * colors.length)];
+            particle.style.background = color;
+            particle.style.boxShadow = `0 0 10px ${color}`;
+            
+            particlesContainer.appendChild(particle);
+        }
+    </script>
 </body>
 </html>
