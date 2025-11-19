@@ -85,17 +85,11 @@ main {
 }
 
 h1 {
-  font-family: "Dancing Script", cursive;
+  font-family: "Lexend", sans-serif;
   font-size: 4rem;
   text-align: center;
   margin: 2rem 0;
-  background: linear-gradient(45deg, #00ffff, #ff00ff, #00ffff);
-  background-size: 200% 200%;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  animation: gradient 3s ease infinite;
-  filter: drop-shadow(0 0 10px rgba(0, 255, 255, 0.7));
+  color: #ffffff;
 }
 
 @keyframes gradient {
@@ -104,12 +98,10 @@ h1 {
 }
 
 h2 {
+  font-family: "Lexend", sans-serif;
   font-size: 2rem;
-  color: #00ffff;
+  color: #ffffff;
   margin-bottom: 1rem;
-  text-shadow: 
-      0 0 10px rgba(0, 255, 255, 0.8),
-      0 0 20px rgba(0, 255, 255, 0.5);
 }
 
 h3 {
@@ -393,6 +385,48 @@ section ul li::before {
   }
 }
 
+/* ==== SECTION DÉROULANTE (UNIQUEMENT ICI) ==== */
+
+.toggle-section {
+  position: relative;
+  cursor: pointer;
+}
+
+/* Ligne + flèche alignées */
+.toggle-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Style de la flèche */
+.toggle-section .arrow {
+  font-size: 1.5rem;
+  transition: transform 0.3s ease;
+  user-select: none;
+}
+
+/* Rotation quand la section est ouverte */
+.toggle-section.open .arrow {
+  transform: rotate(180deg);
+}
+
+/* Contenu caché */
+.toggle-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease;
+  margin-top: 1rem;
+  opacity: 0;
+}
+
+/* Quand ouvert */
+.toggle-section.open .toggle-content {
+  max-height: 500px;      /* ajustable */
+  opacity: 1;
+}
+
+
 /* === RESPONSIVE === */
 @media (max-width: 768px) {
   h1 {
@@ -433,3 +467,7 @@ section ul li::before {
       padding: 1.5rem;
   }
 }
+
+
+
+
